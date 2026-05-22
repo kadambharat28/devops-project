@@ -3,7 +3,9 @@ name: DevOps CI-CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
+
+  workflow_dispatch:
 
 jobs:
   build-test-push:
@@ -32,9 +34,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker Image
-      run: |
-        docker build -t infrasupport9211/devops-project:v1 .
+      run: docker build -t infrasupport9211/devops-project:v1 .
 
     - name: Push Docker Image
-      run: |
-        docker push infrasupport9211/devops-project:v1
+      run: docker push infrasupport9211/devops-project:v1
