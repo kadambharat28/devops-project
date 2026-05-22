@@ -20,7 +20,7 @@ spec:
       containers:
       - name: devops-project
 
-        image: infrasupport9211/devops-project:v1
+        image: infrasupport9211/devops-project:v3.1
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
